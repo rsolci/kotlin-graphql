@@ -1,0 +1,25 @@
+schema {
+    query: Query
+    subscription: Subscriptions
+    mutation: Mutation
+}
+
+type Purchase {
+    id: String!,
+    amount: Long!,
+    customerId: String!,
+    merchantId: String!,
+    createdAt: String!
+}
+
+type Query {
+    purchases: [Purchase]!
+}
+
+type Mutation {
+    createPurchase(amount: Long!, customerId: String!, merchantUUID: String!) : Purchase!
+}
+
+type Subscriptions {
+    latestPurchases: [Purchase]!
+}

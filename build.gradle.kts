@@ -24,6 +24,7 @@ dependencies {
 	implementation("com.graphql-java:graphql-spring-boot-starter:5.0.2")
 	implementation("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
 	implementation("com.graphql-java:graphql-java-tools:5.2.4")
+	implementation("io.reactivex.rxjava2:rxjava:2.1.5")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

@@ -1,0 +1,6 @@
+
+graphql:
+  servlet:
+    subscriptions:
+      websocket:
+        path: /subscriptions
