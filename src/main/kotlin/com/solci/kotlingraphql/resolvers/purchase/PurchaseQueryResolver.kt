@@ -10,7 +10,8 @@ class PurchaseQueryResolver(
     private val purchaseRepository: PurchaseRepository
 ): GraphQLQueryResolver {
 
-    fun purchases(): List<Purchase> {
+    fun purchases(size: Int = 10, offset: Int = 0): List<Purchase> {
+        println("Size: $size, offset: $offset")
         return purchaseRepository.all()
     }
 }

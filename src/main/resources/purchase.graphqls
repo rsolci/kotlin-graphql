@@ -13,7 +13,7 @@ type Purchase {
 }
 
 type Query {
-    purchases: [Purchase]!
+    purchases(size: Int, offset: Int): [Purchase]!
 }
 
 type Mutation {
