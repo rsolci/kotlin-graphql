@@ -9,31 +9,15 @@
             font-weight: 300;
         }
 
-        .stockTicker {
+        .purchaseTicker {
             border: solid black 1px;
             margin: 2px;
             min-height: 400px
         }
 
-        .stockWrapper {
-            display: block;
-            padding: 20px;
-            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            font-weight: 300;
-        }
-
-        .stockSymbol {
-            font-weight: 600;
-        }
-
-        .stockPrice {
+        .purchaseItem {
             font-weight: 600;
             color: red;
-        }
-
-        .stockUp {
-            font-weight: 600;
-            color: green;
         }
 
         .networking {
@@ -53,7 +37,7 @@
             }
         }
 
-        function subscribeToStocks() {
+        function subscribeToPurchases() {
             var exampleSocket = new WebSocket("ws://localhost:8080/subscriptions");
             networkBlip();
 
@@ -86,14 +70,14 @@
                 var htmlStr = '';
                 htmlStr += '<div class="">';
                 purchases.forEach(function (purchase) {
-                    htmlStr += '<span class="stockPrice">' + purchase.id + '</span>';
+                    htmlStr += '<p class="purchaseItem">' + purchase.id + '</p>';
                     htmlStr += '</div>';
                 });
-                document.querySelector('.stockTicker').innerHTML = htmlStr
+                document.querySelector('.purchaseTicker').innerHTML = htmlStr
             };
         }
 
-        window.addEventListener("load", subscribeToStocks);
+        window.addEventListener("load", subscribeToPurchases);
     </script>
 </head>
 <body>
@@ -101,8 +85,8 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-            <h3>Stock Price Updates</h3>
-            <div class="stockTicker"><span>Pending subscription...</span></div>
+            <h3>Purchase Updates</h3>
+            <div class="purchaseTicker"><span>Pending subscription...</span></div>
             <div class="networking">📡</div>
         </div>
     </div>
