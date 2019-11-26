@@ -1,0 +1,14 @@
+type Payout {
+    id: String!,
+    amount: Long!,
+    merchantId: String!,
+    status: String!
+}
+
+extend type Query {
+    payouts(size: Int, offset: Int): [Payout]!
+}
+
+extend type Mutation {
+    createPayout(amount: Long!, merchantId: String!) : Payout!
+}

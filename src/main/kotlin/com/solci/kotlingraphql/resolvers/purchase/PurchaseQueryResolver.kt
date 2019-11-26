@@ -11,7 +11,6 @@ class PurchaseQueryResolver(
 ): GraphQLQueryResolver {
 
     fun purchases(size: Int = 10, offset: Int = 0): List<Purchase> {
-        println("Size: $size, offset: $offset")
         return purchaseRepository.all()
     }
 }
