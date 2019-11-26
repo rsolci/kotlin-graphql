@@ -6,9 +6,9 @@ type Payout {
 }
 
 extend type Query {
-    payouts(size: Int, offset: Int): [Payout]!
+    payouts(size: Int, offset: Int, status:[String]): [Payout]!
 }
 
 extend type Mutation {
-    createPayout(amount: Long!, merchantId: String!) : Payout!
+    createPayout(amount: Long!, merchantId: String!, status: String) : Payout!
 }

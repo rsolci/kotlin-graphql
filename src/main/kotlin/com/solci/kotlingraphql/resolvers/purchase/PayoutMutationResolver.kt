@@ -12,10 +12,10 @@ class PayoutMutationResolver(
     private val payoutRepository: PayoutRepository
 ): GraphQLMutationResolver {
 
-    fun createPayout(amount: Long, merchantId: String): Payout {
+    fun createPayout(amount: Long, merchantId: String, status: PayoutStatus?): Payout {
         val payout = Payout(
             id = UUID.randomUUID(),
-            status = PayoutStatus.SCHEDULED,
+            status = status ?: PayoutStatus.SCHEDULED,
             amount = amount,
             merchantId = merchantId
         )
